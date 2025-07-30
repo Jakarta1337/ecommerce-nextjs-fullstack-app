@@ -6,9 +6,11 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { useCartStore } from "@/store/cart-store";
 import { useEffect, useState } from "react";
+
+import { useCartStore } from "@/store/cart-store";
 import { Button } from "./ui/button";
+
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const { items } = useCartStore();

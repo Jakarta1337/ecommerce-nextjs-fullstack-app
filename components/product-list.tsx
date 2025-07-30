@@ -1,8 +1,9 @@
 "use client";
 
 import Stripe from "stripe";
-import { ProductCard } from "./product-card";
 import { useState } from "react";
+
+import { ProductCard } from "./product-card";
 
 interface Props {
   products: Stripe.Product[];

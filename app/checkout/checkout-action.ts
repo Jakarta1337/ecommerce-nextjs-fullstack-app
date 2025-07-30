@@ -1,8 +1,9 @@
 "use server";
 
+import { redirect } from "next/navigation";
+
 import { stripe } from "@/lib/stripe";
 import { CartItem } from "@/store/cart-store";
-import { redirect } from "next/navigation";
 
 export const checkoutAction = async (formData: FormData): Promise<void> => {
   const itemsJson = formData.get("items") as string;

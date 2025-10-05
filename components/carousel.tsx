@@ -21,8 +21,15 @@ export const Carousel = ({ products }: Props) => {
     return () => clearInterval(interval);
   }, [products.length]);
 
-  const currentProduct = products[current];
+  if (products.length === 0) {
+    return (
+      <div className="text-center py-10 text-gray-500">
+        No products available
+      </div>
+    );
+  }
 
+  const currentProduct = products[current];
   const price = currentProduct.default_price as Stripe.Price;
 
   return (

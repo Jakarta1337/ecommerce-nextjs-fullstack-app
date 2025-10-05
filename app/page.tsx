@@ -10,6 +10,8 @@ export default async function Home() {
     expand: ["data.default_price"],
     limit: 5,
   });
+  const firstProduct = products.data[0];
+  const heroImage = firstProduct?.images?.[0] ?? "/globe.svg";
 
   return (
     <div>
@@ -37,7 +39,7 @@ export default async function Home() {
           </div>
           <Image
             alt="Hero Image"
-            src={products.data[0].images[0]}
+            src={heroImage}
             className="rounded"
             width={450}
             height={450}
